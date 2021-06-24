@@ -1,0 +1,23 @@
+<div>
+    {% for post in posts %}
+      <a href="{{post.id}}">
+        <div style="border : 2px solid gray; margin-left: 10rem; margin-top: 1rem; margin-bottom: 1rem;margin-right: 10rem;">
+            <div style="display: flex; padding: 1rem;">
+              <p style="margin-right: 1rem;">{{post.votes}}</p>
+              <p style="margin-right: 1rem;">{{post.community.name}}</p>
+              <p style="margin-right: 1rem;">posted by</p>
+              <p style="margin-right: 1rem;">{{post.user.username}}</p>
+              <p style="margin-right: 1rem;">{{post.created_time}}</p>
+            </div style="padding: 1 rem">
+              <div>
+                 <h3>{{post.post_name}}</h3>
+              </div>
+              {% if is_retrieve %}
+                  <div style="padding-left: 1 rem">
+                     <h4>{{post.post_data}}</h4>
+                  </div>
+              {% endif %}
+        </div>
+     </a>
+    {% endfor %}
+</div>
